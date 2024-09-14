@@ -1,0 +1,6 @@
+com\example\xmlmanagementapp\XmlManagementApp.class
+com\example\xmlmanagementapp\model\Statistics.class
+com\example\xmlmanagementapp\service\TxtToXmlService.class
+com\example\xmlmanagementapp\service\TxtToXmlServiceImpl.class
+com\example\xmlmanagementapp\model\Book.class
+com\example\xmlmanagementapp\model\Chapter.class
