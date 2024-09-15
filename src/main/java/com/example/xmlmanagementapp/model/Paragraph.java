@@ -10,7 +10,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Chapter {
+public class Paragraph {
     private String id;
-    private List<Paragraph> paragraphs;
+    private List<Line> lines;
 }

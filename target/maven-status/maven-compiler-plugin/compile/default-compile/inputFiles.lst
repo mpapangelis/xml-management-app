@@ -1,6 +1,12 @@
 C:\Users\PC\Documents\SecondTrainingProjects\xmlManagementApp\src\main\java\com\example\xmlmanagementapp\model\Book.java
 C:\Users\PC\Documents\SecondTrainingProjects\xmlManagementApp\src\main\java\com\example\xmlmanagementapp\XmlManagementApp.java
+C:\Users\PC\Documents\SecondTrainingProjects\xmlManagementApp\src\main\java\com\example\xmlmanagementapp\model\Line.java
 C:\Users\PC\Documents\SecondTrainingProjects\xmlManagementApp\src\main\java\com\example\xmlmanagementapp\service\TxtToXmlService.java
+C:\Users\PC\Documents\SecondTrainingProjects\xmlManagementApp\src\main\java\com\example\xmlmanagementapp\service\XmlChapterWriterService.java
+C:\Users\PC\Documents\SecondTrainingProjects\xmlManagementApp\src\main\java\com\example\xmlmanagementapp\service\XmlChapterReaderService.java
+C:\Users\PC\Documents\SecondTrainingProjects\xmlManagementApp\src\main\java\com\example\xmlmanagementapp\service\XmlChapterReaderServiceImpl.java
 C:\Users\PC\Documents\SecondTrainingProjects\xmlManagementApp\src\main\java\com\example\xmlmanagementapp\model\Chapter.java
+C:\Users\PC\Documents\SecondTrainingProjects\xmlManagementApp\src\main\java\com\example\xmlmanagementapp\service\XmlChapterWriterServiceImpl.java
 C:\Users\PC\Documents\SecondTrainingProjects\xmlManagementApp\src\main\java\com\example\xmlmanagementapp\service\TxtToXmlServiceImpl.java
+C:\Users\PC\Documents\SecondTrainingProjects\xmlManagementApp\src\main\java\com\example\xmlmanagementapp\model\Paragraph.java
 C:\Users\PC\Documents\SecondTrainingProjects\xmlManagementApp\src\main\java\com\example\xmlmanagementapp\model\Statistics.java

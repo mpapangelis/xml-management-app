@@ -1,6 +1,12 @@
-com\example\xmlmanagementapp\XmlManagementApp.class
+com\example\xmlmanagementapp\service\XmlChapterReaderService.class
 com\example\xmlmanagementapp\model\Statistics.class
-com\example\xmlmanagementapp\service\TxtToXmlService.class
+com\example\xmlmanagementapp\model\Paragraph.class
 com\example\xmlmanagementapp\service\TxtToXmlServiceImpl.class
+com\example\xmlmanagementapp\service\XmlChapterReaderServiceImpl.class
+com\example\xmlmanagementapp\service\XmlChapterWriterService.class
+com\example\xmlmanagementapp\model\Line.class
+com\example\xmlmanagementapp\XmlManagementApp.class
+com\example\xmlmanagementapp\service\TxtToXmlService.class
 com\example\xmlmanagementapp\model\Book.class
 com\example\xmlmanagementapp\model\Chapter.class
+com\example\xmlmanagementapp\service\XmlChapterWriterServiceImpl.class
