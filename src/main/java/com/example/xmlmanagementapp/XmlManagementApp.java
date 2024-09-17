@@ -3,6 +3,9 @@ package com.example.xmlmanagementapp;
 
 import com.example.xmlmanagementapp.model.Book;
 import com.example.xmlmanagementapp.model.Chapter;
+import com.example.xmlmanagementapp.model.Statistics;
+import com.example.xmlmanagementapp.service.GenerateStatisticsFromXmlService;
+import com.example.xmlmanagementapp.service.GenerateStatisticsFromXmlServiceImpl;
 import com.example.xmlmanagementapp.service.TxtToXmlService;
 import com.example.xmlmanagementapp.service.TxtToXmlServiceImpl;
 import com.example.xmlmanagementapp.service.XmlChapterReaderService;
@@ -30,6 +33,7 @@ public class XmlManagementApp {
         XmlChapterWriterService xmlChapterWriterService = new XmlChapterWriterServiceImpl();
         XsdGeneratorService xsdGeneratorService = new XsdGeneratorServiceImpl();
         XmlValidationService xmlValidationService = new XmlValidationServiceImpl();
+        GenerateStatisticsFromXmlService statisticsFromXmlService = new GenerateStatisticsFromXmlServiceImpl();
         
 //        try {
 //            String inputFilePath = "src/main/resources/sample-lorem-ipsum-text-file.txt";
@@ -74,7 +78,23 @@ public class XmlManagementApp {
 //        } else {
 //            System.out.println("The xml is invalid!");
 //        }
-        
+// --------------------------------------------------
+
+//        String xmlFilePath = "src/main/resources/xml/selected_chapters.xml";
+//        
+//        try {
+//            Statistics statistics = statisticsFromXmlService.generateStatistics(xmlFilePath);
+//            
+//            System.out.println("Total Paragraphs: " + statistics.getTotalParagraphs());
+//            System.out.println("Total Lines: " + statistics.getTotalLines());
+//            System.out.println("Total Words: " + statistics.getTotalWords());
+//            System.out.println("Distinct Words: " + statistics.getDistinctWordsCount());
+//            System.out.println("Creation DateTime: " + statistics.getCreationDateTime());
+//            System.out.println("Author: " + statistics.getAuthor());
+//            System.out.println("Application Class Name: " + statistics.getApplicationClassName());
+//        } catch (Exception e) {
+//            System.out.println(e.getMessage());
+//        }
         
     }
     
