@@ -31,15 +31,15 @@
   </xs:complexType>
 
   <xs:complexType name="statistics">
-    <xs:all>
+    <xs:sequence>
       <xs:element name="totalParagraphs" type="xs:int"/>
       <xs:element name="totalLines" type="xs:int"/>
       <xs:element name="totalWords" type="xs:int"/>
-      <xs:element name="distinctWords" type="xs:int"/>
       <xs:element name="creationDateTime" type="xs:string" minOccurs="0"/>
       <xs:element name="author" type="xs:string" minOccurs="0"/>
-      <xs:element name="applicationClass" type="xs:string" minOccurs="0"/>
-    </xs:all>
+      <xs:element name="applicationClassName" type="xs:string" minOccurs="0"/>
+      <xs:element name="distinctWords" type="xs:int"/>
+    </xs:sequence>
   </xs:complexType>
 </xs:schema>
 
