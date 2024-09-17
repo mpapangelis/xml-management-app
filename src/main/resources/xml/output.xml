@@ -49033,9 +49033,9 @@
 		<totalParagraphs>2850</totalParagraphs>
 		<totalLines>43011</totalLines>
 		<totalWords>362553</totalWords>
-		<distinctWords>178</distinctWords>
-		<creationDateTime>2024-09-17T17:55:10.5676139</creationDateTime>
+		<creationDateTime>2024-09-17T18:18:10.537548</creationDateTime>
 		<author>Marios P</author>
-		<applicationClass>com.example.xmlmanagementapp.service.TxtToXmlServiceImpl</applicationClass>
+		<applicationClassName>com.example.xmlmanagementapp.service.TxtToXmlServiceImpl</applicationClassName>
+		<distinctWords>178</distinctWords>
 	</statistics>
 </book>

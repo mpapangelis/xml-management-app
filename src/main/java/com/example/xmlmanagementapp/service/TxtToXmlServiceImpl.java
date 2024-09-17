@@ -121,11 +121,6 @@ public class TxtToXmlServiceImpl implements TxtToXmlService {
             writer.writeEndElement();
             writer.writeCharacters("\n");
             
-            writer.writeCharacters("\t\t");
-            writer.writeStartElement("distinctWords");
-            writer.writeCharacters(String.valueOf(statistics.getDistinctWordsCount()));
-            writer.writeEndElement();
-            writer.writeCharacters("\n");
             
             writer.writeCharacters("\t\t");
             writer.writeStartElement("creationDateTime");
@@ -140,8 +135,14 @@ public class TxtToXmlServiceImpl implements TxtToXmlService {
             writer.writeCharacters("\n");
             
             writer.writeCharacters("\t\t");
-            writer.writeStartElement("applicationClass");
+            writer.writeStartElement("applicationClassName");
             writer.writeCharacters(statistics.getApplicationClassName());
+            writer.writeEndElement();
+            writer.writeCharacters("\n");
+            
+            writer.writeCharacters("\t\t");
+            writer.writeStartElement("distinctWords");
+            writer.writeCharacters(String.valueOf(statistics.getDistinctWordsCount()));
             writer.writeEndElement();
             writer.writeCharacters("\n");
             

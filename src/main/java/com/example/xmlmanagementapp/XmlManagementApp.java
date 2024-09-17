@@ -41,7 +41,7 @@ public class XmlManagementApp {
 //            System.out.println(e.getMessage());
 //        }
 // -------------------------------
-//        List<String> chapterIdsToRead = Arrays.asList("chapter-1", "chapter-3", "chapter-8");
+//        List<String> chapterIdsToRead = Arrays.asList("chapter-1", "chapter-4", "chapter-8");
 //        
 //        try {
 //            String inputFilePath = "src/main/resources/xml/output.xml";
@@ -54,13 +54,13 @@ public class XmlManagementApp {
 //                System.out.println(e.getMessage());
 //        }
 // ------------------------------------------------
-        String xsdFilePath = "src/main/resources/xsd/schema.xsd";
-        try {
-            xsdGeneratorService.generateXsd(xsdFilePath);
-            System.out.println("XSD generated successfully at: " + xsdFilePath);
-        } catch (IOException  e) {
-            System.out.println(e.getMessage());
-        }
+//        String xsdFilePath = "src/main/resources/xsd/schema.xsd";
+//        try {
+//            xsdGeneratorService.generateXsd(xsdFilePath);
+//            System.out.println("XSD generated successfully at: " + xsdFilePath);
+//        } catch (IOException  e) {
+//            System.out.println(e.getMessage());
+//        }
 
 // --------------------------------------------------
 

@@ -24,11 +24,9 @@
     <xs:attribute name="id" type="xs:string"/>
   </xs:complexType>
 
-  <xs:complexType name="line">
-    <xs:sequence>
-      <xs:element name="content" type="xs:string" minOccurs="0"/>
-    </xs:sequence>
-  </xs:complexType>
+  <xs:simpleType name="line">
+    <xs:restriction base="xs:string"/>
+  </xs:simpleType>
 
   <xs:complexType name="statistics">
     <xs:sequence>
