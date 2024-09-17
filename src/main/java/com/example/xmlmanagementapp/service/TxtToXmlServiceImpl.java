@@ -15,8 +15,11 @@ public class TxtToXmlServiceImpl implements TxtToXmlService {
     
     private final Statistics statistics;
     
-    public TxtToXmlServiceImpl() {
+    public TxtToXmlServiceImpl(String authorName) {
         this.statistics = new Statistics();
+        this.statistics.setCreationDateTime(LocalDateTime.now());
+        this.statistics.setAuthor(authorName);
+        this.statistics.setApplicationClassName(this.getClass().getName());
     }
 
     @Override
@@ -126,19 +129,19 @@ public class TxtToXmlServiceImpl implements TxtToXmlService {
             
             writer.writeCharacters("\t\t");
             writer.writeStartElement("creationDateTime");
-            writer.writeCharacters(LocalDateTime.now().format(DateTimeFormatter.ISO_LOCAL_DATE_TIME));
+            writer.writeCharacters(statistics.getCreationDateTime().format(DateTimeFormatter.ISO_LOCAL_DATE_TIME));
             writer.writeEndElement();
             writer.writeCharacters("\n");
             
             writer.writeCharacters("\t\t");
             writer.writeStartElement("author");
-            writer.writeCharacters("Author_Name");
+            writer.writeCharacters(statistics.getAuthor());
             writer.writeEndElement();
             writer.writeCharacters("\n");
             
             writer.writeCharacters("\t\t");
             writer.writeStartElement("applicationClass");
-            writer.writeCharacters(this.getClass().getName());
+            writer.writeCharacters(statistics.getApplicationClassName());
             writer.writeEndElement();
             writer.writeCharacters("\n");
             

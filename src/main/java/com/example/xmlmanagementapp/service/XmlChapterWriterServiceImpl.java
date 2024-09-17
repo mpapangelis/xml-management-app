@@ -21,7 +21,7 @@ public class XmlChapterWriterServiceImpl implements XmlChapterWriterService{
             
             writer.writeStartDocument("1.0");
             writer.writeCharacters("\n");
-            writer.writeStartElement("book");
+            writer.writeStartElement("fragment");
             writer.writeCharacters("\n");
             
             for (Chapter chapter : chapters) {
