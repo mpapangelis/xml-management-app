@@ -13,6 +13,14 @@ import javax.xml.stream.events.XMLEvent;
 
 public class GenerateStatisticsFromXmlServiceImpl implements GenerateStatisticsFromXmlService{
 
+    /**
+     * This method generates statistics from a given XML file.
+     * 
+     * @param xmlFilePath The path of the XML file that its statistics are going to be counted.
+     * @return A statistics object containing the calculated statistics.
+     * @throws IOException
+     * @throws XMLStreamException 
+     */
     @Override
     public Statistics generateStatistics(String xmlFilePath) throws IOException, XMLStreamException {
         Statistics statistics = new Statistics();

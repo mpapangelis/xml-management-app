@@ -13,6 +13,18 @@ import javax.xml.stream.XMLStreamWriter;
 
 public class XmlChapterWriterServiceImpl implements XmlChapterWriterService{
 
+    /**
+     * This method writes a list of chapters to an XML file.
+     * 
+     * It uses STAX to generate an XML document from the provided list of Chapters.
+     * Each chapter written also has all the associated paragraphs and lines contained on it.
+     * The XML result has a root element fragment containing all the chapters.
+     * 
+     * @param chapters The list of chapter objects to be written on the XML
+     * @param outputFilePath The file path where the generated XML will be saved.
+     * @throws XMLStreamException
+     * @throws IOException 
+     */
     @Override
     public void writeChaptersToXml(List<Chapter> chapters, String outputFilePath) throws XMLStreamException, IOException {
         XMLOutputFactory outputFactory = XMLOutputFactory.newInstance();

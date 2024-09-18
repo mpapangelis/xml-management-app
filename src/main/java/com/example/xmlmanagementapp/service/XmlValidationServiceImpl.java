@@ -12,6 +12,15 @@ import org.xml.sax.SAXException;
 
 public class XmlValidationServiceImpl implements XmlValidationService{
 
+    /**
+     * This method reads an XML file and validates that its structure and content
+     * is conformed on the provided XSD schema file.
+     * 
+     * @param xmlFilePath The file path to the XML document to be validated.
+     * @param xsdFilePath The file path of the XSD schema that works as the validator.
+     * @param xmlClass The class type of the root element in the XML file.
+     * @return Returns true if the XML is valid and false if its not.
+     */
     @Override
     public boolean validateXml(String xmlFilePath, String xsdFilePath, Class<?> xmlClass) {
         System.out.println("Starting XML validation...");

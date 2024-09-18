@@ -26,7 +26,7 @@ import javax.xml.stream.XMLStreamException;
 public class XmlManagementApp {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        
         
         TxtToXmlService txtToXmlService = new TxtToXmlServiceImpl("Marios P");
         XmlChapterReaderService xmlChapterReaderService = new XmlChapterReaderServiceImpl();

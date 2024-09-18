@@ -16,6 +16,12 @@ import javax.xml.transform.stream.StreamResult;
 
 public class XsdGeneratorServiceImpl implements XsdGeneratorService{
 
+    /**
+     * This method generates an XSD file based on the classes provided on the JAXBContext
+     * 
+     * @param outputFilePath The file path where the generated XSD will be saved
+     * @throws IOException 
+     */
     @Override
     public void generateXsd(String outputFilePath) throws IOException {
         try {

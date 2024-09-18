@@ -17,6 +17,20 @@ import javax.xml.stream.events.XMLEvent;
 
 public class XmlChapterReaderServiceImpl implements XmlChapterReaderService{
 
+    
+    /**
+     * This method reads the chapters from an XML file based on the provided chapters IDs.
+     * 
+     * It uses STAX to parse the XML file and get from it the chapters that are included in the
+     * provided list of chapter IDs. Each chapter, paragraph and line it reads, it stores it 
+     * inside Chapter, Paragraph and Line objects.
+     * 
+     * @param xmlFilePath The file path of the XML document to be read.
+     * @param chapterIds A list of chapters IDs to be selected from the XML file.
+     * @return A list of Chapter objects containing all the information that was read.
+     * @throws XMLStreamException
+     * @throws IOException 
+     */
     @Override
     public List<Chapter> readChapters(String xmlFilePath, List<String> chapterIds) throws XMLStreamException, IOException {
         XMLInputFactory factory = XMLInputFactory.newInstance();

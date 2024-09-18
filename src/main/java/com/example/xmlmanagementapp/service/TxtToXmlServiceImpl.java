@@ -22,6 +22,13 @@ public class TxtToXmlServiceImpl implements TxtToXmlService {
         this.statistics.setApplicationClassName(this.getClass().getName());
     }
 
+    
+    /**
+     * This method reads a text file and converts its content into an XML format.
+     * The generated XML contains chapters, paragraphs, lines and statistical information.
+     * @param inputFilePath The path of the input text file.
+     * @param outputFilePath The path where the output XML file will be saved.
+     */
     @Override
     public void generateXmlFromText(String inputFilePath, String outputFilePath) {
         try (BufferedReader br = new BufferedReader(new FileReader(inputFilePath));
