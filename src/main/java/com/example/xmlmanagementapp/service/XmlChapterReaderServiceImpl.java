@@ -13,8 +13,9 @@ import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.events.Characters;
 import javax.xml.stream.events.StartElement;
 import javax.xml.stream.events.XMLEvent;
+import lombok.extern.slf4j.Slf4j;
 
-
+@Slf4j
 public class XmlChapterReaderServiceImpl implements XmlChapterReaderService{
 
     
@@ -33,6 +34,8 @@ public class XmlChapterReaderServiceImpl implements XmlChapterReaderService{
      */
     @Override
     public List<Chapter> readChapters(String xmlFilePath, List<String> chapterIds) throws XMLStreamException, IOException {
+        
+        log.info("Starting to read chapters from XML file: {}", xmlFilePath);
         XMLInputFactory factory = XMLInputFactory.newInstance();
         FileInputStream inputStream = new FileInputStream(xmlFilePath);
         XMLEventReader eventReader = factory.createXMLEventReader(inputStream);
@@ -101,6 +104,7 @@ public class XmlChapterReaderServiceImpl implements XmlChapterReaderService{
         eventReader.close();
         inputStream.close();
         
+        log.info("Successfully read chapters from XML file: {}", xmlFilePath);
         return chapters;
     }
     

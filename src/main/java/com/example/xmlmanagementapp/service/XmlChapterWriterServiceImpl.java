@@ -9,8 +9,9 @@ import java.util.List;
 import javax.xml.stream.XMLOutputFactory;
 import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamWriter;
+import lombok.extern.slf4j.Slf4j;
 
-
+@Slf4j
 public class XmlChapterWriterServiceImpl implements XmlChapterWriterService{
 
     /**
@@ -27,6 +28,7 @@ public class XmlChapterWriterServiceImpl implements XmlChapterWriterService{
      */
     @Override
     public void writeChaptersToXml(List<Chapter> chapters, String outputFilePath) throws XMLStreamException, IOException {
+        log.info("Starting to write chapters to XML file: {}", outputFilePath);
         XMLOutputFactory outputFactory = XMLOutputFactory.newInstance();
         try (FileWriter fileWriter = new FileWriter(outputFilePath)) {
             XMLStreamWriter writer = outputFactory.createXMLStreamWriter(fileWriter);
@@ -74,6 +76,7 @@ public class XmlChapterWriterServiceImpl implements XmlChapterWriterService{
             writer.flush();
             writer.close();
         }
+        log.info("Successfully wrote chapters to XML file: {}", outputFilePath);
     }
     
 }

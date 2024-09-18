@@ -12,8 +12,9 @@ import java.io.File;
 import java.io.IOException;
 import javax.xml.transform.Result;
 import javax.xml.transform.stream.StreamResult;
+import lombok.extern.slf4j.Slf4j;
 
-
+@Slf4j
 public class XsdGeneratorServiceImpl implements XsdGeneratorService{
 
     /**
@@ -24,13 +25,14 @@ public class XsdGeneratorServiceImpl implements XsdGeneratorService{
      */
     @Override
     public void generateXsd(String outputFilePath) throws IOException {
+        log.info("Starting XSD generation at: {}", outputFilePath);
         try {
             JAXBContext context = JAXBContext.newInstance(Book.class, Chapter.class, Paragraph.class, Line.class, Statistics.class);
             
             context.generateSchema(new MySchemaOutputResolver(outputFilePath));
-            
+            log.info("XSD generation completed successfully at: {}", outputFilePath);
         } catch (JAXBException e) {
-            System.out.println(e.getMessage());
+            log.error("Error during XSD generation: {}", e.getMessage());
         }
     }
     

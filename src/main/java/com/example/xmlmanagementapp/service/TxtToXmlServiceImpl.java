@@ -10,7 +10,9 @@ import java.time.format.DateTimeFormatter;
 import javax.xml.stream.XMLOutputFactory;
 import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamWriter;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 public class TxtToXmlServiceImpl implements TxtToXmlService {
     
     private final Statistics statistics;
@@ -31,6 +33,8 @@ public class TxtToXmlServiceImpl implements TxtToXmlService {
      */
     @Override
     public void generateXmlFromText(String inputFilePath, String outputFilePath) {
+        
+        log.info("Starting XML generation from text file: {}", inputFilePath);
         try (BufferedReader br = new BufferedReader(new FileReader(inputFilePath));
                 FileWriter fileWriter = new FileWriter(outputFilePath)) {
             
@@ -163,8 +167,10 @@ public class TxtToXmlServiceImpl implements TxtToXmlService {
             
             writer.flush();
             writer.close();
+            
+            log.info("Successfully generated XML file: {}", outputFilePath);
         } catch (XMLStreamException | IOException e) {
-            System.out.println(e.getMessage());
+            log.error("Error during XML generation: {}", e.getMessage());
         }
         
         

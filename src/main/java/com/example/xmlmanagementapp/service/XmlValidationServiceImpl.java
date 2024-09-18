@@ -7,9 +7,10 @@ import java.io.File;
 import javax.xml.XMLConstants;
 import javax.xml.validation.Schema;
 import javax.xml.validation.SchemaFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.xml.sax.SAXException;
 
-
+@Slf4j
 public class XmlValidationServiceImpl implements XmlValidationService{
 
     /**
@@ -23,7 +24,7 @@ public class XmlValidationServiceImpl implements XmlValidationService{
      */
     @Override
     public boolean validateXml(String xmlFilePath, String xsdFilePath, Class<?> xmlClass) {
-        System.out.println("Starting XML validation...");
+        log.info("Starting XML validation for file: {}", xmlFilePath);
         boolean isValid = false;
         try {
             JAXBContext jaxbContext = JAXBContext.newInstance(xmlClass);
@@ -37,12 +38,12 @@ public class XmlValidationServiceImpl implements XmlValidationService{
             File xmlFile = new File(xmlFilePath);
             unmarshaller.unmarshal(xmlFile);
             
-            System.out.println("XML is valid.");
+            log.info("XML is valid.");
             isValid = true;
         } catch (JAXBException | SAXException e) {
-            System.out.println("XML is not valid: " + e.getMessage());
+            log.error("XML is not valid: {}", e.getMessage());
         }
-        System.out.println("XML validation completed!");
+        log.info("XML validation completed.");
         return isValid;
     }
     

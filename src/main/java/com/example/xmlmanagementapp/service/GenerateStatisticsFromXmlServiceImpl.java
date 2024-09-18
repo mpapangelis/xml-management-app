@@ -10,7 +10,9 @@ import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.events.Characters;
 import javax.xml.stream.events.StartElement;
 import javax.xml.stream.events.XMLEvent;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 public class GenerateStatisticsFromXmlServiceImpl implements GenerateStatisticsFromXmlService{
 
     /**
@@ -23,6 +25,7 @@ public class GenerateStatisticsFromXmlServiceImpl implements GenerateStatisticsF
      */
     @Override
     public Statistics generateStatistics(String xmlFilePath) throws IOException, XMLStreamException {
+        log.info("Starting to generate statistics from the XML file: {}", xmlFilePath);
         Statistics statistics = new Statistics();
         
         XMLInputFactory factory = XMLInputFactory.newInstance();
@@ -57,12 +60,23 @@ public class GenerateStatisticsFromXmlServiceImpl implements GenerateStatisticsF
             }
         }
         
+        log.info("Statistics calculation finished successfully.");
         statistics.setCreationDateTime(LocalDateTime.now());
         statistics.setAuthor("Unknown");
         statistics.setApplicationClassName(this.getClass().getName());
         
         eventReader.close();
         inputStream.close();
+        
+        log.info("Total Paragraphs: {}", statistics.getTotalParagraphs());
+        log.info("Total Lines: {}", statistics.getTotalLines());
+        log.info("Total Words: {}", statistics.getTotalWords());
+        log.info("Distinct Words: {}", statistics.getDistinctWordsCount());
+        log.info("Creation DateTime: {}", statistics.getCreationDateTime());
+        log.info("Author: {}", statistics.getAuthor());
+        log.info("Application Class Name: {}", statistics.getApplicationClassName());
+
+        log.info("Statistics generation completed.");
         
         return statistics;
         
